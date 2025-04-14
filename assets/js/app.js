@@ -10,18 +10,18 @@ document.addEventListener("mousemove", (event) =>{
 let xDeg = document.querySelector(".x-deg")
 let yDeg = document.querySelector(".y-deg")
 
-window.addEventListener("deviceorientation", (event) =>{
-    let xRotate = event.beta
-    let yRotate = event.gamma
+window.addEventListener("deviceorientation", (event) => {
+    let xRotate = event.gamma
+    let yRotate = event.alpha
+    console.log(xRotate, yRotate);
 
     xDeg.innerHTML = xRotate
     yDeg.innerHTML = yRotate
 
     const styles = {
-        style: `--move-x: ${xRotate}deg;
-        --move-y: ${yRotate}deg;`
-        
+        style: `--move-x: ${xRotate / 2}deg;
+        --move-y: ${yRotate / 2}deg;`
     }
-    Object.assign(document.documentElement,styles)
+    Object.assign(document.documentElement, styles)
 
-},true)
+}, true)
