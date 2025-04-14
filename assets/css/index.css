@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.layers{
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.layers__container {
+    height: 100vh;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 1s cubic-bezier(0.125,0.495,0,1);
+    transform:  rotateX(var(--move-y)) rotateY(var(--move-x));
+}
+
+.layers__item {
+    position: absolute;
+    /* top: -100;
+    left: -100;
+    right: -100;
+    bottom: -100; */
+    inset: -8vw;
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+
+}
+
+.layer-1 {
+    background-image: url(../images/layer-1.jpg);
+    transform: translateZ(-300px) scale(1.88);
+}
+
+.layer-2 {
+    background-image: url(../images/layer-2.png);
+    transform: translateZ(-200px)
+    scale(120%);}
+
+
+
+
+
+.layer-4 {
+    transform: translateZ(0px);
+}
+
+.layer-5 {
+    background-image: url(../images/layer-5.png);
+    transform: translateZ(50px);}
+
+.layer-6 {
+    background-image: url(../images/layer-6.png);
+    transform: translateZ(100px);}
+
+
+
+canvas{
+    width: 100%;
+}
+
+.layer-3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    transform: translateZ(10px);
+}
+.btn-rain{
+    padding: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: none;
+    color: white;
+    font-size: 16px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.btn-rain:active{
+    background: white;
+}
