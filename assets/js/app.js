@@ -6,3 +6,22 @@ document.addEventListener("mousemove", (event) =>{
     }
     Object.assign(document.documentElement , styles)
 })
+
+let xDeg = document.querySelector(".x-deg")
+let yDeg = document.querySelector(".y-deg")
+
+window.addEventListener("deviceorientation", (event) =>{
+    let xRotate = event.beta
+    let yRotate = event.gamma
+
+    xDeg.innerHTML = xRotate
+    yDeg.innerHTML = yRotate
+
+    const styles = {
+        style: `--move-x: ${xRotate}deg
+        --move-y: ${yRotate}deg`
+        
+    }
+    Object.assign(document.documentElement,styles)
+
+},true)

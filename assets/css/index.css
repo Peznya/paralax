@@ -68,6 +68,9 @@ canvas{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
     pointer-events: all;
     transform: translateZ(10px);
 }
